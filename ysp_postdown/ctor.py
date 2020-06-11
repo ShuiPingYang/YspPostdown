@@ -1,5 +1,4 @@
 
-
 class MDDoc:
 
     COMMENT_BEGIN_FLAG = '<__COMMENT__BEGIN__FLAG__>'
@@ -15,6 +14,10 @@ class MDDoc:
 
     def block(self, content):
         self.line(content)
+        self.br()
+
+    def description(self, content):
+        self.block('> {0}'.format(content))
         self.br()
 
     def italic(self, content):
@@ -56,15 +59,10 @@ class MDDoc:
         i = -1
         while True:
             if self.md_struct[i].startswith(self.COMMENT_BEGIN_FLAG):
-                self.md_struct[i] = '> \n'
+                self.md_struct[i] = '\n'
                 break
-            self.md_struct[i] = '> ' + self.md_struct[i]
             i -= 1
         self.br()
 
     def output(self):
-        self.hr()
-        self.block("Built with [Postdown][PyPI].")
-        self.block("Author: [Titor](https://github.com/TitorX)")
-        self.line('[PyPI]:    https://pypi.python.org/pypi/Postdown')
         return ''.join(self.md_struct)
