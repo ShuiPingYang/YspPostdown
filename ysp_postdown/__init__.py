@@ -7,5 +7,5 @@ if sys.version_info.major == 2:
     sys.setdefaultencoding('utf8')
     
 __author__ = 'YangShuiPing'
-__version__ = '1.0.1'
+__version__ = '1.0.2'
 

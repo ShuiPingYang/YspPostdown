@@ -1,6 +1,21 @@
 import json
 from .ctor import MDDoc
+import json
 
+def check_json_format(raw_msg):
+  """
+  用于判断一个字符串是否符合Json格式
+  :param self:
+  :return:
+  """
+  if isinstance(raw_msg, str):    # 首先判断变量是否为字符串
+    try:
+      json.loads(raw_msg, encoding='utf-8')
+    except ValueError:
+      return False
+    return True
+  else:
+    return False
 
 def get_rows(raw, keys):
     result = list()
@@ -35,10 +50,10 @@ def parse(in_file, out_file):
         if api['response']:
             # Response example.
             for response in api['response']:
-                doc.comment_begin()
 
-                # Request Query
-                doc.bold('Request')
+                doc.title('Request', 4)
+                # Request information.
+                doc.title(response['name'], 5)
                 if request['url'].get('query',''):
                     if isinstance(request['url'], dict):
                         rows = get_rows(
@@ -78,10 +93,10 @@ def parse(in_file, out_file):
                         elif request['body']['mode'] == 'file':
                             doc.text(request['body']['file']['src'])
                 # Response
-                doc.bold('Response')
-                doc.bold('Body')
-                doc.code_block(json.dumps(json.loads(response['body']), indent=2, ensure_ascii=False), 'json')
-                doc.comment_end()
+                if check_json_format(response['body']):
+                    doc.bold('Response')
+                    doc.bold('Body')
+                    doc.code_block(json.dumps(json.loads(response['body']), indent=2, ensure_ascii=False), 'json')
 
         else:
             # Request information.

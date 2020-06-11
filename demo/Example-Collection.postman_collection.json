@@ -8,7 +8,7 @@
 	},
 	"item": [
 		{
-			"name": "An example API with GET",
+			"name": "测试一下",
 			"request": {
 				"url": {
 					"raw": "http://0.0.0.0:8000/get/example?example-key=example-value",

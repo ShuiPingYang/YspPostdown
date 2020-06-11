@@ -1,402 +1,229 @@
 # Example-Collection
 
-----------------
-
 ## An example collection for postdown.
 
 *This example could show you what's the postdown could do.*
 
-----------------
+### 1.测试一下
 
-## An example API with GET
-
-```
-GET http://0.0.0.0:8000/get/example?example-key=example-value
+```http
+GET 0/get/example
 ```
 
-### An example API.
+> ### An example API.
 
 You should write the detail about this API.
 
 **It's markdown supported.**
 
-----------------
 
-### Request
+#### Request
 
-> 
-> **Query**
-> 
-> |Key|Value|Description|
-> |---|---|---|
-> |example-key|example-value|example-description|
-> 
-> **Header**
-> 
-> |Key|Value|Description|
-> |---|---|---|
-> |example-header|example-header-value|example-description|
-> 
+##### This's a right way to use.
 
-### Examples:
+|key|value|description|
+|---|---|---|
+|example-key|example-value|example-description|
 
-> 
-> **Example: This's a right way to use.**
-> 
-> > 
-> > ```
-> > GET http://0.0.0.0:8000/get/example?example-key=successful
-> > ```
-> > 
-> > **Request**
-> > 
-> > > 
-> > > **Query**
-> > > 
-> > > |Key|Value|Description|
-> > > |---|---|---|
-> > > |example-key|successful|example-description|
-> > > 
-> > > **Header**
-> > > 
-> > > |Key|Value|Description|
-> > > |---|---|---|
-> > > |example-header|example-header-value|example-description|
-> > > 
-> > 
-> > ----------------
-> > 
-> > **Response**
-> > 
-> > > 
-> > > **Body**
-> > > 
-> > > ```
-> > > {
-> > >   "result": "successful"
-> > > }
-> > > ```
-> > > 
-> > 
-> 
-> **Example: This's the worry way to use.**
-> 
-> > 
-> > ```
-> > GET http://0.0.0.0:8000/get/example?example-key=unsuccessful
-> > ```
-> > 
-> > **Request**
-> > 
-> > > 
-> > > **Query**
-> > > 
-> > > |Key|Value|Description|
-> > > |---|---|---|
-> > > |example-key|unsuccessful|example-description|
-> > > 
-> > > **Header**
-> > > 
-> > > |Key|Value|Description|
-> > > |---|---|---|
-> > > |example-header|example-header-value|example-description|
-> > > 
-> > 
-> > ----------------
-> > 
-> > **Response**
-> > 
-> > > 
-> > > **Body**
-> > > 
-> > > ```
-> > > {
-> > >   "result": "unsuccessful"
-> > > }
-> > > ```
-> > > 
-> > 
-> 
+**Header**
+
+|key|value|description|
+|---|---|---|
+|example-header|example-header-value|example-description|
+
+**Response**
+
+**Body**
+
+```json
+{
+  "result": "successful"
+}
+```
+
+#### Request
+
+##### This's the worry way to use.
+
+|key|value|description|
+|---|---|---|
+|example-key|example-value|example-description|
+
+**Header**
+
+|key|value|description|
+|---|---|---|
+|example-header|example-header-value|example-description|
+
+**Response**
+
+**Body**
+
+```json
+{
+  "result": "unsuccessful"
+}
+```
 
 ----------------
 
-## An example API with POST
+### 2.An example API with POST
 
-```
-POST http://0.0.0.0:8000/post/example?example-key=example-value
+```http
+POST 0/post/example
 ```
 
-### An example API.
+> ### An example API.
 
 You should write the detail about this API.
 
 **It's markdown supported.**
 
-----------------
 
-### Request
+#### Request
 
-> 
-> **Query**
-> 
-> |Key|Value|Description|
-> |---|---|---|
-> |example-key|example-value|example-description|
-> 
-> **Header**
-> 
-> |Key|Value|Description|
-> |---|---|---|
-> |example-header|example-header-value|example-description|
-> 
-> **Body**
-> 
-> |Key|Value|Type|Description|
-> |---|---|---|---|
-> |example-key|example-value|text|example-description|
-> 
+##### Successful Request
 
-### Examples:
+|key|value|description|
+|---|---|---|
+|example-key|example-value|example-description|
 
-> 
-> **Example: Successful Request**
-> 
-> > 
-> > ```
-> > POST http://0.0.0.0:8000/post/example?example-key=example-value
-> > ```
-> > 
-> > **Request**
-> > 
-> > > 
-> > > **Query**
-> > > 
-> > > |Key|Value|Description|
-> > > |---|---|---|
-> > > |example-key|example-value|example-description|
-> > > 
-> > > **Header**
-> > > 
-> > > |Key|Value|Description|
-> > > |---|---|---|
-> > > |example-header|example-header-value|example-description|
-> > > 
-> > > **Body**
-> > > 
-> > > |Key|Value|Type|Description|
-> > > |---|---|---|---|
-> > > |example-key|successful|text|example-description|
-> > > 
-> > 
-> > ----------------
-> > 
-> > **Response**
-> > 
-> > > 
-> > > **Body**
-> > > 
-> > > ```
-> > > {
-> > >   "result": [
-> > >     "successful"
-> > >   ]
-> > > }
-> > > ```
-> > > 
-> > 
-> 
-> **Example: Unsuccessful Requests**
-> 
-> > 
-> > ```
-> > POST http://0.0.0.0:8000/post/example?example-key=example-value
-> > ```
-> > 
-> > **Request**
-> > 
-> > > 
-> > > **Query**
-> > > 
-> > > |Key|Value|Description|
-> > > |---|---|---|
-> > > |example-key|example-value|example-description|
-> > > 
-> > > **Header**
-> > > 
-> > > |Key|Value|Description|
-> > > |---|---|---|
-> > > |example-header|example-header-value|example-description|
-> > > 
-> > > **Body**
-> > > 
-> > > |Key|Value|Type|Description|
-> > > |---|---|---|---|
-> > > |example-key|unsuccessful|text|example-description|
-> > > 
-> > 
-> > ----------------
-> > 
-> > **Response**
-> > 
-> > > 
-> > > **Body**
-> > > 
-> > > ```
-> > > {
-> > >   "result": [
-> > >     "unsuccessful"
-> > >   ]
-> > > }
-> > > ```
-> > > 
-> > 
-> 
+**Header**
+
+|key|value|description|
+|---|---|---|
+|example-header|example-header-value|example-description|
+
+**Body**
+
+|key|value|type|description|
+|---|---|---|---|
+|example-key|example-value|text|example-description|
+
+**Response**
+
+**Body**
+
+```json
+{
+  "result": [
+    "successful"
+  ]
+}
+```
+
+#### Request
+
+##### Unsuccessful Requests
+
+|key|value|description|
+|---|---|---|
+|example-key|example-value|example-description|
+
+**Header**
+
+|key|value|description|
+|---|---|---|
+|example-header|example-header-value|example-description|
+
+**Body**
+
+|key|value|type|description|
+|---|---|---|---|
+|example-key|example-value|text|example-description|
+
+**Response**
+
+**Body**
+
+```json
+{
+  "result": [
+    "unsuccessful"
+  ]
+}
+```
 
 ----------------
 
-## An example API with JSON
+### 3.An example API with JSON
 
-```
-POST http://0.0.0.0:8000/json/example?example-key=example-value
+```http
+POST 0/json/example
 ```
 
-### An example API.
+> ### An example API.
 
 You should write the detail about this API.
 
 **It's markdown supported.**
 
-----------------
 
-### Request
+#### Request
 
-> 
-> **Query**
-> 
-> |Key|Value|Description|
-> |---|---|---|
-> |example-key|example-value|example-description|
-> 
-> **Header**
-> 
-> |Key|Value|Description|
-> |---|---|---|
-> |example-key|example-value|example-description|
-> |Content-Type|application/json||
-> 
-> **Body**
-> 
-> ```
-> {
-> 	"example-key": "example-value"
-> }
-> ```
-> 
+##### Successful Request
 
-### Examples:
+|key|value|description|
+|---|---|---|
+|example-key|example-value|example-description|
 
-> 
-> **Example: Successful Request**
-> 
-> > 
-> > ```
-> > POST http://0.0.0.0:8000/json/example?example-key=example-value
-> > ```
-> > 
-> > **Request**
-> > 
-> > > 
-> > > **Query**
-> > > 
-> > > |Key|Value|Description|
-> > > |---|---|---|
-> > > |example-key|example-value|example-description|
-> > > 
-> > > **Header**
-> > > 
-> > > |Key|Value|Description|
-> > > |---|---|---|
-> > > |example-key|example-value|example-description|
-> > > |Content-Type|application/json||
-> > > 
-> > > **Body**
-> > > 
-> > > ```
-> > > {
-> > > 	"example-key": "successful"
-> > > }
-> > > ```
-> > > 
-> > 
-> > ----------------
-> > 
-> > **Response**
-> > 
-> > > 
-> > > **Body**
-> > > 
-> > > ```
-> > > {
-> > >   "result": "successful"
-> > > }
-> > > ```
-> > > 
-> > 
-> 
-> **Example: Unsuccessful Request**
-> 
-> > 
-> > ```
-> > POST http://0.0.0.0:8000/json/example?example-key=example-value
-> > ```
-> > 
-> > **Request**
-> > 
-> > > 
-> > > **Query**
-> > > 
-> > > |Key|Value|Description|
-> > > |---|---|---|
-> > > |example-key|example-value|example-description|
-> > > 
-> > > **Header**
-> > > 
-> > > |Key|Value|Description|
-> > > |---|---|---|
-> > > |example-key|example-value|example-description|
-> > > |Content-Type|application/json||
-> > > 
-> > > **Body**
-> > > 
-> > > ```
-> > > {
-> > > 	"example-key": "unsuccessful"
-> > > }
-> > > ```
-> > > 
-> > 
-> > ----------------
-> > 
-> > **Response**
-> > 
-> > > 
-> > > **Body**
-> > > 
-> > > ```
-> > > {
-> > >   "result": "unsuccessful"
-> > > }
-> > > ```
-> > > 
-> > 
-> 
+**Header**
+
+|key|value|description|
+|---|---|---|
+|example-key|example-value|example-description|
+|Content-Type|application/json||
+
+**Body**
+
+```
+{
+	"example-key": "example-value"
+}
+```
+
+**Response**
+
+**Body**
+
+```json
+{
+  "result": "successful"
+}
+```
+
+#### Request
+
+##### Unsuccessful Request
+
+|key|value|description|
+|---|---|---|
+|example-key|example-value|example-description|
+
+**Header**
+
+|key|value|description|
+|---|---|---|
+|example-key|example-value|example-description|
+|Content-Type|application/json||
+
+**Body**
+
+```
+{
+	"example-key": "example-value"
+}
+```
+
+**Response**
+
+**Body**
+
+```json
+{
+  "result": "unsuccessful"
+}
+```
 
 ----------------
 
-----------------
-
-Built with [Postdown][PyPI].
-
-Author: [Titor](https://github.com/TitorX)
-
-[PyPI]:    https://pypi.python.org/pypi/Postdown
